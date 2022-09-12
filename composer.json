@@ -1,0 +1,19 @@
+{
+    "name": "typo3-on-aws/aws-cloudfront",
+    "type": "typo3-cms-extension",
+    "description": "Amazon CloudFront integration",
+    "require": {
+        "typo3/cms-core": "^11",
+        "aws/aws-sdk-php": "^3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Typo3OnAws\\AwsCloudfront\\": "Classes"
+        }
+    },
+    "extra": {
+       "typo3/cms": {
+          "extension-key": "aws_cloudfront"
+       }
+    }
+}

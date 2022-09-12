@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2022-02-10T00:00:00Z" product-name="aws_cloudfront">
+		<header/>
+		<body>
+
+			<trans-unit id="menuitem.title">
+				<source>Clear CDN cache of all sites</source>
+			</trans-unit>
+			<trans-unit id="menuitem.description">
+				<source>Trigger an invalidation request of all cached objects in Amazon CloudFront (CDN) for all currently configured sites.</source>
+			</trans-unit>
+			<trans-unit id="purge.success">
+				<source>Request accepted</source>
+			</trans-unit>
+			<trans-unit id="purge.failure">
+				<source>Request failed or rejected</source>
+			</trans-unit>
+
+			<trans-unit id="general.distributionId">
+				<source>Distribution ID</source>
+			</trans-unit>
+			<trans-unit id="general.cloudfrontInactive">
+				<source>(CloudFront integration disabled or not configured yet)</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

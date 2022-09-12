@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2022-02-10T00:00:00Z" product-name="aws_cloudfront">
+		<header/>
+		<body>
+			<trans-unit id="cloudfront.tab">
+				<source>CloudFront CDN</source>
+			</trans-unit>
+			<trans-unit id="cloudfrontActive.label">
+				<source>CloudFront integration</source>
+			</trans-unit>
+			<trans-unit id="cloudfrontActive.description">
+				<source></source>
+			</trans-unit>
+			<trans-unit id="cloudfrontDistributionId.label">
+				<source>CloudFront distribution ID</source>
+			</trans-unit>
+			<trans-unit id="cloudfrontDistributionId.description">
+				<source>Amazon Cloudfront distribution ID, e.g. E12345678AABBCC</source>
+			</trans-unit>
+			<trans-unit id="cloudfrontAccessKeyId.label">
+				<source>AWS access key ID</source>
+			</trans-unit>
+			<trans-unit id="cloudfrontAccessKeyId.description">
+				<source>AWS access key ID (optional)</source>
+			</trans-unit>
+			<trans-unit id="cloudfrontSecretAccessKeyId.label">
+				<source>AWS secret access key ID</source>
+			</trans-unit>
+			<trans-unit id="cloudfrontSecretAccessKeyId.description">
+				<source>AWS secret access key ID (optional)</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
