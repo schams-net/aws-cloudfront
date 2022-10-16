@@ -26,14 +26,17 @@ class SiteUtility
         if (!$site) {
             return false;
         }
-        $cloudfrontActive = $site->getConfiguration()['cloudfrontActive'];
-        $distributionId = $site->getConfiguration()['cloudfrontDistributionId'];
 
-        if (!is_string($distributionId) || !preg_match('/^E[A-Z0-9]{8,32}$/', $distributionId)) {
-            unset($distributionId);
+		$configuration = $site->getConfiguration();
+		if (!isset($configuration['cloudfrontActive']) || !isset($configuration['cloudfrontDistributionId'])) {
+			return false;
+		}
+
+        if (!is_string($configuration['cloudfrontDistributionId']) || !preg_match('/^E[A-Z0-9]{8,32}$/', $configuration['cloudfrontDistributionId'])) {
+            unset($configuration['cloudfrontDistributionId']);
         }
 
-        if ($cloudfrontActive == true && isset($distributionId)) {
+        if ($configuration['cloudfrontActive'] == true && isset($configuration['cloudfrontDistributionId'])) {
             return true;
         }
         return false;
