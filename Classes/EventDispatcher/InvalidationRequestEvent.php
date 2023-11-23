@@ -7,7 +7,7 @@ namespace Typo3OnAws\AwsCloudfront\EventDispatcher;
  * @author Michael Schams | https://schams.net | https://t3rrific.com
  */
 
-final class CloudfrontInvalidationRequestEvent
+final class InvalidationRequestEvent
 {
     /**
      * Paths
@@ -20,12 +20,24 @@ final class CloudfrontInvalidationRequestEvent
     private ?int $pageId;
 
     /**
+     * Site identifier (string)
+     */
+    private ?string $siteIdentifier;
+
+    /**
+     * Caller reference (string)
+     */
+    private ?string $callerReference;
+
+    /**
      * Constructor
      */
-    public function __construct(array $paths, ?int $pageId)
+    public function __construct(array $paths, ?int $pageId, ?string $siteIdentifier, ?string $callerReference)
     {
         $this->paths = $paths;
         $this->pageId = $pageId;
+        $this->siteIdentifier = $siteIdentifier;
+        $this->callerReference = $callerReference;
     }
 
     /**
@@ -50,5 +62,21 @@ final class CloudfrontInvalidationRequestEvent
     public function getPageId(): ?int
     {
         return $this->pageId;
+    }
+
+    /**
+     * Get site identifier
+     */
+    public function getSiteIdentifier(): ?string
+    {
+        return $this->siteIdentifier;
+    }
+
+    /**
+     * Get caller reference
+     */
+    public function getCallerReference(): ?string
+    {
+        return $this->callerReference;
     }
 }

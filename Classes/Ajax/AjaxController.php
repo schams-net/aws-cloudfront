@@ -10,7 +10,8 @@ namespace Typo3OnAws\AwsCloudfront\Ajax;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use Typo3OnAws\AwsCloudfront\EventDispatcher\CloudfrontInvalidationRequestEvent;
+use Typo3OnAws\AwsCloudfront\EventDispatcher\InvalidationRequestEvent;
+use Typo3OnAws\AwsCloudfront\EventDispatcher\InvalidationResponseEvent;
 use Typo3OnAws\AwsCloudfront\Service\AmazonWebServices\CloudFront;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\Exception\SiteNotFoundException;
@@ -66,14 +67,16 @@ class AjaxController
         $this->site = $this->getCurrentSiteByPageId($pageId);
         $cloudfrontActive = $this->site->getConfiguration()['cloudfrontActive'];
         $distributionId = $this->site->getConfiguration()['cloudfrontDistributionId'];
+        $siteIdentifier = $this->site->getIdentifier();
+        $callerReference = md5(strval(time()));
 
         if ($cloudfrontActive == true && $this->validDistributionId($distributionId)) {
             // Get all page URI of the default language and all translations
             $paths = $this->getUriPaths($pageId);
 
-            // Enable other extensions to adjust the paths
-            $event = new CloudfrontInvalidationRequestEvent($paths, $pageId);
-            $paths = $this->eventDispatcher->dispatch($event)->getPaths();
+            // Let other extensions manipulate the request, e.g. adjust the paths
+            $eventBeforeRequest = new InvalidationRequestEvent($paths, $pageId, $siteIdentifier, $callerReference);
+            $paths = $this->eventDispatcher->dispatch($eventBeforeRequest)->getPaths();
 
             // Initialization
             $this->setResponse([
@@ -89,9 +92,11 @@ class AjaxController
                 $this->setResponse(['message' => 'Invalidation successfully triggered.']); // @TODO translate
                 if (array_key_exists('invalidationId', $result)) {
                     $this->setResponse(['invalidationId' => $result['invalidationId']]);
-                    $this->setResponse(['invalidationId' => $result['invalidationId']]);
                     $this->setResponse(['message' => 'Invalidation successfully triggered. ID: ' . $result['invalidationId']]); // @TODO translate
                 }
+                // invoke event after request
+                $eventAfterRequest = new InvalidationResponseEvent($paths, $pageId, $siteIdentifier, $callerReference, $result['invalidationId']);
+                $this->eventDispatcher->dispatch($eventAfterRequest);
             }
             if (array_key_exists('message', $result)) {
                 $this->setResponse(['message' => $result['message']]);

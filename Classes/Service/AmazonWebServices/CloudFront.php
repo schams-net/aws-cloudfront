@@ -30,16 +30,15 @@ class CloudFront extends Authentication
     /**
      *
      */
-    public function createInvalidation(string $distributionId, array $paths): ?array
+    public function createInvalidation(string $distributionId, array $paths, ?string $callerReference = null): ?array
     {
-        $callerReference = bin2hex(random_bytes(20));
         $cloudFrontClient = new CloudFrontClient($this->getConfiguration());
 
         try {
             $result = $cloudFrontClient->createInvalidation([
                 'DistributionId' => $distributionId,
                 'InvalidationBatch' => [
-                    'CallerReference' => $callerReference,
+                    'CallerReference' => ($callerReference ?? bin2hex(random_bytes(20))),
                     'Paths' => [
                         'Items' => $paths,
                         'Quantity' => count($paths)
