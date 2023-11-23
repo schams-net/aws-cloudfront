@@ -6,7 +6,6 @@ services:
 
   Typo3OnAws\AwsCloudfront\:
     resource: '../Classes/*'
-    exclude: '../Classes/Domain/Model/*'
 
   Typo3OnAws\AwsCloudfront\Ajax\AjaxController:
     public: true;
@@ -16,16 +15,3 @@ services:
 
   Typo3OnAws\AwsCloudfront\Utility\AwsExceptionHandler:
     public: true;
-
-#  Typo3OnAws\AwsCloudfront\EventListener\ExampleListener:
-#    tags:
-#      - name: event.listener
-#        identifier: 'cloudfrontInvalidationExampleListener'
-#        event: Typo3OnAws\AwsCloudfront\EventDispatcher\CloudfrontInvalidationRequestEvent
-#        before: 'cloudfrontInvalidationDatabaseListener'
-
-  Typo3OnAws\AwsCloudfront\EventListener\DatabaseListener:
-    tags:
-      - name: event.listener
-        identifier: 'cloudfrontInvalidationDatabaseListener'
-        event: Typo3OnAws\AwsCloudfront\EventDispatcher\CloudfrontInvalidationRequestEvent
