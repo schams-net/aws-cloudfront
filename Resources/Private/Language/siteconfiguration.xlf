@@ -3,13 +3,19 @@
 	<file source-language="en" datatype="plaintext" original="messages" date="2022-02-10T00:00:00Z" product-name="aws_cloudfront">
 		<header/>
 		<body>
-			<trans-unit id="cloudfront.tab">
+			<trans-unit id="cloudfront.tab.label">
 				<source>CloudFront CDN</source>
 			</trans-unit>
 			<trans-unit id="cloudfrontActive.label">
 				<source>CloudFront integration</source>
 			</trans-unit>
 			<trans-unit id="cloudfrontActive.description">
+				<source></source>
+			</trans-unit>
+			<trans-unit id="cloudfront.palette.group1.label">
+				<source></source>
+			</trans-unit>
+			<trans-unit id="cloudfront.palette.group2.label">
 				<source></source>
 			</trans-unit>
 			<trans-unit id="cloudfrontDistributionId.label">
