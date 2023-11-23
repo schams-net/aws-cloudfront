@@ -73,7 +73,8 @@ class CloudFront extends Authentication
                 'MaxItems' => '10'
             ]);
         } catch (\Exception $e) {
-            return AwsExceptionHandler::getResponse($e);
+            $exceptionHandler = GeneralUtility::makeInstance(AwsExceptionHandler::class);
+            return $exceptionHandler->getResponse($e);
         }
 
         if (isset($result)) {
