@@ -14,6 +14,9 @@ services:
   Typo3OnAws\AwsCloudfront\Hook\ButtonBarHook:
     public: true;
 
+  Typo3OnAws\AwsCloudfront\Utility\AwsExceptionHandler:
+    public: true;
+
 #  Typo3OnAws\AwsCloudfront\EventListener\ExampleListener:
 #    tags:
 #      - name: event.listener

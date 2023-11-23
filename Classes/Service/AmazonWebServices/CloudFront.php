@@ -8,8 +8,8 @@ namespace Typo3OnAws\AwsCloudfront\Service\AmazonWebServices;
  */
 
 use Aws\CloudFront\CloudFrontClient;
-use Aws\Exception\AwsException;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use Typo3OnAws\AwsCloudfront\Utility\AwsExceptionHandler;
 
 /**
  *
@@ -46,13 +46,9 @@ class CloudFront extends Authentication
                     ]
                 ]
             ]);
-        } catch (AwsException $e) {
-            // @TODO write error message to system log and output a general error here
-            // Error: $e->getAwsErrorMessage()
-            return [
-                'success' => false,
-                'message' => $e->getAwsErrorMessage()
-            ];
+        } catch (\Exception $e) {
+            $exceptionHandler = GeneralUtility::makeInstance(AwsExceptionHandler::class);
+            return $exceptionHandler->getResponse($e);
         }
 
         if (isset($result)) {
@@ -77,13 +73,8 @@ class CloudFront extends Authentication
                 'DistributionId' => $distributionId,
                 'MaxItems' => '10'
             ]);
-        } catch (AwsException $e) {
-            // @TODO write error message to system log and output a general error here
-            // Error: $e->getAwsErrorMessage()
-            return [
-                'success' => false,
-                'message' => $e->getAwsErrorMessage()
-            ];
+        } catch (\Exception $e) {
+            return AwsExceptionHandler::getResponse($e);
         }
 
         if (isset($result)) {

@@ -36,6 +36,9 @@ define([
                     Notification.error(data.message);
                 }
             },
+            error: function(jqXHR, textStatus, errorThrown) {
+                Notification.error('Error: ' + textStatus);
+            },
             complete: function(jqXHR, status) {
                 // status: "success", "notmodified", "nocontent", "error", "timeout", "abort", or "parsererror"
                 Module.loading(false);
