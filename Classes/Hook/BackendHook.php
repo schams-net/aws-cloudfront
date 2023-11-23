@@ -76,9 +76,10 @@ class BackendHook implements LoggerAwareInterface
             // getRecord($table, $uid, $fields = '*', $where = '', $useDeleteClause = true)
             $record = BackendUtility::getRecord($table, (int)$id, 'slug');
 
-            $site = $this->getCurrentSite((int)$id);
-            $cloudfrontActive = $site->getConfiguration()['cloudfrontActive'];
-            $distributionId = $site->getConfiguration()['cloudfrontDistributionId'];
+            $site = $this->getCurrentSite(intval($id));
+            $siteConfiguration = $site->getConfiguration();
+            $cloudfrontActive = (isset($siteConfiguration['cloudfrontActive']) ? $siteConfiguration['cloudfrontActive'] : null);
+            $distributionId = (isset($siteConfiguration['cloudfrontDistributionId']) ? $siteConfiguration['cloudfrontDistributionId'] : null);
             // @TODO
         }
     }
