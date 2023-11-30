@@ -3,8 +3,10 @@ declare(strict_types=1);
 namespace T3rrific\AwsCloudfront\Hook;
 
 /**
- * Amazon CloudFront
+ * Amazon CloudFront Integration for TYPO3 CMS
  * @author Michael Schams | https://schams.net | https://t3rrific.com
+ *
+ * See README.md and/or LICENSE.md for copyright and license information.
  */
 
 use Psr\Log\LoggerAwareInterface;

@@ -2,16 +2,18 @@
 declare(strict_types=1);
 namespace T3rrific\AwsCloudfront\Utility;
 
+/**
+ * Amazon CloudFront Integration for TYPO3 CMS
+ * @author Michael Schams | https://schams.net | https://t3rrific.com
+ *
+ * See README.md and/or LICENSE.md for copyright and license information.
+ */
+
 use Aws\Exception\AwsException;
 use Aws\Exception\CredentialsException;
 //use Aws\CloudFront\Exception\CloudFrontException;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
-
-/**
- * Amazon CloudFront Integration
- * @author Michael Schams | https://schams.net | https://t3rrific.com
- */
 
 /**
  * Exception Handler
