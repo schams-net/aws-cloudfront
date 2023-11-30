@@ -6,7 +6,7 @@ declare(strict_types=1);
  * @author Michael Schams | https://schams.net | https://t3rrific.com
  */
 
-use Typo3OnAws\AwsCloudfront\Configuration\Extension;
+use T3rrific\AwsCloudfront\Configuration\Extension;
 
 defined('TYPO3') or die();
 

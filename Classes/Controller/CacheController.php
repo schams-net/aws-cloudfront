@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace Typo3OnAws\AwsCloudfront\Controller;
+namespace T3rrific\AwsCloudfront\Controller;
 
 /**
  * Amazon CloudFront Integration
@@ -57,7 +57,7 @@ class CacheController implements ClearCacheActionsHookInterface
      */
     public function flushAction(): Response
     {
-        // @TODO implement invalidation request, see Typo3OnAws\AwsCloudfront\Service\AmazonWebServices\createInvalidation()
+        // @TODO implement invalidation request, see T3rrific\AwsCloudfront\Service\AmazonWebServices\createInvalidation()
 
         // we cannot add our own message unfortunately
         $response = new Response();

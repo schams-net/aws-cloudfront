@@ -4,14 +4,14 @@ services:
     autoconfigure: true
     public: false
 
-  Typo3OnAws\AwsCloudfront\:
+  T3rrific\AwsCloudfront\:
     resource: '../Classes/*'
 
-  Typo3OnAws\AwsCloudfront\Ajax\AjaxController:
+  T3rrific\AwsCloudfront\Ajax\AjaxController:
     public: true;
 
-  Typo3OnAws\AwsCloudfront\Hook\ButtonBarHook:
+  T3rrific\AwsCloudfront\Hook\ButtonBarHook:
     public: true;
 
-  Typo3OnAws\AwsCloudfront\Utility\AwsExceptionHandler:
+  T3rrific\AwsCloudfront\Utility\AwsExceptionHandler:
     public: true;

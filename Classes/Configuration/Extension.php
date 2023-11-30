@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace Typo3OnAws\AwsCloudfront\Configuration;
+namespace T3rrific\AwsCloudfront\Configuration;
 
 /**
  * Amazon CloudFront
@@ -8,9 +8,9 @@ namespace Typo3OnAws\AwsCloudfront\Configuration;
  * Based on EXT:typo3_warming by Elias Häußler <elias@haeussler.dev> | https://github.com/eliashaeussler/typo3-warming
  */
 
-use Typo3OnAws\AwsCloudfront\Controller\CacheController;
-use Typo3OnAws\AwsCloudfront\Hook\BackendHook;
-use Typo3OnAws\AwsCloudfront\Hook\ButtonBarHook;
+use T3rrific\AwsCloudfront\Controller\CacheController;
+use T3rrific\AwsCloudfront\Hook\BackendHook;
+use T3rrific\AwsCloudfront\Hook\ButtonBarHook;
 use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 

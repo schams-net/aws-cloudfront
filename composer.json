@@ -1,5 +1,5 @@
 {
-    "name": "typo3-on-aws/aws-cloudfront",
+    "name": "t3rrific/aws-cloudfront",
     "type": "typo3-cms-extension",
     "description": "Amazon CloudFront integration",
     "require": {
@@ -8,7 +8,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Typo3OnAws\\AwsCloudfront\\": "Classes"
+            "T3rrific\\AwsCloudfront\\": "Classes"
         }
     },
     "extra": {

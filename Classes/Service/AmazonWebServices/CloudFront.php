@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace Typo3OnAws\AwsCloudfront\Service\AmazonWebServices;
+namespace T3rrific\AwsCloudfront\Service\AmazonWebServices;
 
 /**
  * Amazon CloudFront Integration
@@ -9,7 +9,7 @@ namespace Typo3OnAws\AwsCloudfront\Service\AmazonWebServices;
 
 use Aws\CloudFront\CloudFrontClient;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use Typo3OnAws\AwsCloudfront\Utility\AwsExceptionHandler;
+use T3rrific\AwsCloudfront\Utility\AwsExceptionHandler;
 
 /**
  *

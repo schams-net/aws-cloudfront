@@ -9,18 +9,18 @@ return [
     // ...
     'cloudfront_test' => [
         'path' => '/cloudfront/test',
-        'target' => \Typo3OnAws\AwsCloudfront\Ajax\AjaxController::class . '::test'
+        'target' => \T3rrific\AwsCloudfront\Ajax\AjaxController::class . '::test'
     ],
     // Flush specific URI, triggered from the page or list module
-    // see Typo3OnAws\AwsCloudfront\Hook\ButtonBarHook
+    // see T3rrific\AwsCloudfront\Hook\ButtonBarHook
     'cloudfront_clear_page_cache' => [
         'path' => '/cloudfront/page',
-        'target' => \Typo3OnAws\AwsCloudfront\Ajax\AjaxController::class . '::page'
+        'target' => \T3rrific\AwsCloudfront\Ajax\AjaxController::class . '::page'
     ],
     // Flush cache, triggered from top bar (clear caches menu)
-    // see Typo3OnAws\AwsCloudfront\Controller\CacheController
+    // see T3rrific\AwsCloudfront\Controller\CacheController
     'cloudfront' => [
         'path' => '/cloudfront/flush',
-        'target' => \Typo3OnAws\AwsCloudfront\Controller\CacheController::class . '::flushAction'
+        'target' => \T3rrific\AwsCloudfront\Controller\CacheController::class . '::flushAction'
     ],
 ];

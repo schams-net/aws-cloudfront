@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace Typo3OnAws\AwsCloudfront\Ajax;
+namespace T3rrific\AwsCloudfront\Ajax;
 
 /**
  * Amazon CloudFront Integration
@@ -10,9 +10,9 @@ namespace Typo3OnAws\AwsCloudfront\Ajax;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use Typo3OnAws\AwsCloudfront\EventDispatcher\InvalidationRequestEvent;
-use Typo3OnAws\AwsCloudfront\EventDispatcher\InvalidationResponseEvent;
-use Typo3OnAws\AwsCloudfront\Service\AmazonWebServices\CloudFront;
+use T3rrific\AwsCloudfront\EventDispatcher\InvalidationRequestEvent;
+use T3rrific\AwsCloudfront\EventDispatcher\InvalidationResponseEvent;
+use T3rrific\AwsCloudfront\Service\AmazonWebServices\CloudFront;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\Exception\SiteNotFoundException;
 use TYPO3\CMS\Core\Http\JsonResponse;

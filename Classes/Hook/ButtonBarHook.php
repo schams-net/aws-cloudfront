@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace Typo3OnAws\AwsCloudfront\Hook;
+namespace T3rrific\AwsCloudfront\Hook;
 
 /**
  * Amazon CloudFront
@@ -13,7 +13,7 @@ use TYPO3\CMS\Core\Imaging\Icon;
 use TYPO3\CMS\Core\Imaging\IconFactory;
 use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use Typo3OnAws\AwsCloudfront\Utility\SiteUtility;
+use T3rrific\AwsCloudfront\Utility\SiteUtility;
 
 /**
  * Hook to manipulate the button bar in page module

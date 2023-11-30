@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace Typo3OnAws\AwsCloudfront\Utility;
+namespace T3rrific\AwsCloudfront\Utility;
 
 /**
  * Amazon CloudFront Integration
