@@ -13,6 +13,6 @@ use T3rrific\AwsCloudfront\Configuration\Extension;
 defined('TYPO3') or die();
 
 (function () {
-    Extension::registerBackendHooks();
-    Extension::registerButtonBarCacheActions();
+    // Register custom styles: Resources/Public/Css/Backend/*
+    Extension::registerCustomStyles();
 })();

@@ -10,7 +10,6 @@ namespace T3rrific\AwsCloudfront\Configuration;
  * See README.md and/or LICENSE.md for copyright and license information.
  */
 
-use T3rrific\AwsCloudfront\Controller\CacheController;
 use T3rrific\AwsCloudfront\Hook\BackendHook;
 use T3rrific\AwsCloudfront\Hook\ButtonBarHook;
 use TYPO3\CMS\Core\Core\Environment;
@@ -40,18 +39,7 @@ final class Extension
     }
 
     /**
-     * Register clear cache action as additional backend items (top bar in the backend)
-     * ext_localconf.php
-     */
-    public static function registerToolbarCacheActions(): void
-    {
-        $lib = 'additionalBackendItems';
-        $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS'][$lib]['cacheActions'][self::KEY] =
-            CacheController::class;
-    }
-
-    /**
-     * Register clear cache action as additional backend items (top bar in the backend)
+     * Register an additional button in backend modules such as "Page" or "List"
      * ext_localconf.php
      */
     public static function registerButtonBarCacheActions(): void

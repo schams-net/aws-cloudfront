@@ -65,34 +65,6 @@ define([
     $(document).ready(function() {
         Module.initialize();
 
-        // clear cache actions (top bar)
-        $('a.toolbar-cache-flush-action[href*=cloudfront]').click(function(event) {
-            event.preventDefault();
-            console.log('toolbar-cache-flush-action');
-
-            // close "clear cache" menu
-            //$('#typo3-cms-backend-backend-toolbaritems-clearcachetoolbaritem a.dropdown-toggle').click();
-            //bootstrap.Dropdown(element, ...);
-
-            const immediateActionCallback = new ImmediateAction(function () {
-                // Uncaught (in promise) TypeError: ModuleMenu.showModule is not a function
-                //ModuleMenu.showModule('web_layout');
-            });
-
-            Notification.info('Clean CDN Caches', 'Are you sure that you want to clear the CDN caches of all sites?', 10, [
-                {
-                    label: 'CANCEL',
-                    action: null
-                },
-                {
-                    label: 'YES',
-                    action: immediateActionCallback
-                }
-            ]);
-
-            return false;
-        });
-
         // button bar (in page module)
         $('a.btn.flush-cloudfront-cache').click(function(event) {
             event.preventDefault();

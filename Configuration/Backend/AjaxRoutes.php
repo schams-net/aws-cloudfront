@@ -18,11 +18,5 @@ return [
     'cloudfront_clear_page_cache' => [
         'path' => '/cloudfront/page',
         'target' => \T3rrific\AwsCloudfront\Ajax\AjaxController::class . '::page'
-    ],
-    // Flush cache, triggered from top bar (clear caches menu)
-    // see T3rrific\AwsCloudfront\Controller\CacheController
-    'cloudfront' => [
-        'path' => '/cloudfront/flush',
-        'target' => \T3rrific\AwsCloudfront\Controller\CacheController::class . '::flushAction'
-    ],
+    ]
 ];
