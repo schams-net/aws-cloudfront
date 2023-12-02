@@ -10,8 +10,5 @@ services:
   T3rrific\AwsCloudfront\Ajax\AjaxController:
     public: true;
 
-  T3rrific\AwsCloudfront\Hook\ButtonBarHook:
-    public: true;
-
   T3rrific\AwsCloudfront\Utility\AwsExceptionHandler:
     public: true;

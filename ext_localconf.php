@@ -14,5 +14,4 @@ defined('TYPO3') or die();
 
 (function () {
     Extension::registerBackendHooks();
-    Extension::registerButtonBarCacheActions();
 })();

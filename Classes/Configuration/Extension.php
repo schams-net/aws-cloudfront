@@ -11,7 +11,6 @@ namespace T3rrific\AwsCloudfront\Configuration;
  */
 
 use T3rrific\AwsCloudfront\Hook\BackendHook;
-use T3rrific\AwsCloudfront\Hook\ButtonBarHook;
 use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -36,17 +35,6 @@ final class Extension
             BackendHook::class;
         $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS'][$lib]['processDatamapClass'][self::KEY] =
             BackendHook::class;
-    }
-
-    /**
-     * Register an additional button in backend modules such as "Page" or "List"
-     * ext_localconf.php
-     */
-    public static function registerButtonBarCacheActions(): void
-    {
-        $lib = 'Backend\Template\Components\ButtonBar';
-        $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS'][$lib]['getButtonsHook'][self::KEY] =
-            ButtonBarHook::class . '->getButtons';
     }
 
     /**
