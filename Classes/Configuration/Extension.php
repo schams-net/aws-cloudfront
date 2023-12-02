@@ -55,12 +55,9 @@ final class Extension
      */
     public static function registerCustomStyles(): void
     {
-        $GLOBALS['TBE_STYLES']['skins'][self::KEY] = [
-            'name' => 'aws_cloudfront',
-            'stylesheetDirectories' => [
-                'css' => 'EXT:aws_cloudfront/Resources/Public/Css/Backend',
-            ],
-        ];
+        // Add all stylesheets from folder
+        $GLOBALS['TYPO3_CONF_VARS']['BE']['stylesheets'][self::KEY] =
+            'EXT:' . self::KEY . '/Resources/Public/Css/Backend/';
     }
 
     /**
