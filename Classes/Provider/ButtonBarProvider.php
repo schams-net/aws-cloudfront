@@ -18,6 +18,7 @@ use TYPO3\CMS\Core\Imaging\Icon;
 use TYPO3\CMS\Core\Imaging\IconFactory;
 use TYPO3\CMS\Core\Localization\LanguageService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Page\PageRenderer;
 use T3rrific\AwsCloudfront\Utility\SiteUtility;
 
 /**
@@ -40,9 +41,6 @@ final class ButtonBarProvider
         $buttons = $event->getButtons();
         $request = $this->getRequest();
 
-        // JavaScript module has a click() listener on $('a.btn.flush-cloudfront-cache')
-        //$this->pageRenderer->loadRequireJsModule('TYPO3/CMS/AwsCloudfront/Module');
-
         $pageId = (int)($request->getParsedBody()['id'] ?? $request->getQueryParams()['id'] ?? 0);
         $route = $request->getAttribute('route');
         $normalizedParams = $request->getAttribute('normalizedParams');
@@ -55,6 +53,12 @@ final class ButtonBarProvider
          && $normalizedParams !== null
          && $isCloudfrontActive === true
          && in_array($route->getPath(), self::ALLOWED_MODULES)) {
+
+            // Load JavaScript for the backend
+            $pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
+            $pageRenderer->loadJavaScriptModule(
+                '@t3rrific/aws-cloudfront/CloudFront.js'
+            );
 
             // Generate the button with icon, CSS class, etc.
             $iconFactory = GeneralUtility::makeInstance(IconFactory::class);
