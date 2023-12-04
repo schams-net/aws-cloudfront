@@ -12,3 +12,8 @@ services:
 
   T3rrific\AwsCloudfront\Utility\AwsExceptionHandler:
     public: true;
+
+  T3rrific\AwsCloudfront\Provider\ButtonBarProvider:
+    tags:
+      - name: event.listener
+        identifier: 'aws_cloudfront/button-bar-provider'
