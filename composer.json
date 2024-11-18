@@ -2,6 +2,9 @@
     "name": "t3rrific/aws-cloudfront",
     "type": "typo3-cms-extension",
     "description": "Amazon CloudFront integration",
+    "license": [
+        "GPL-2.0-or-later"
+    ],
     "require": {
         "typo3/cms-core": "^11",
         "aws/aws-sdk-php": "^3"
