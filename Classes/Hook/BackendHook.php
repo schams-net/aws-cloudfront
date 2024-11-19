@@ -6,7 +6,7 @@ namespace T3rrific\AwsCloudfront\Hook;
  * Amazon CloudFront Integration for TYPO3 CMS
  * @author Michael Schams | https://schams.net | https://t3rrific.com
  *
- * See README.md and/or LICENSE.md for copyright and license information.
+ * See README.md and/or LICENSE.txt for copyright and license information.
  */
 
 use Psr\Log\LoggerAwareInterface;
@@ -25,9 +25,9 @@ use TYPO3\CMS\Core\Site\SiteFinder;
  * These hooks can be used to trigger an invalidation request, e.g. when a backend user
  * adds/updates/deletes content elements on a page, or edits page properties that require
  * a CDN cache clear.
- * 
+ *
  * >>> THIS IS WORK IN PROGRESS AND HAS NOT BEEN IMPLEMENTED YET! <<<
- * 
+ *
  */
 class BackendHook implements LoggerAwareInterface
 {
