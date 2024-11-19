@@ -28,11 +28,11 @@ composer require t3rrific/aws-cloudfront
 
 The TYPO3 extension Amazon CloudFront follows [semantic versioning](https://semver.org/).
 
-| Major version: | Git branch:                                                            | Status:                  | TYPO3 compatibility: |
-|---------------:|:----------------------------------------------------------------------:|:-------------------------|:---------------------|
-|           v1.x | [typo3v11](https://github.com/t3rrific/aws-cloudfront/tree/typo3v11)   | legacy, still maintained | TYPO3 v11 LTS        |
-|           v2.x | [main](https://github.com/t3rrific/aws-cloudfront/tree/main)           | **stable**               | TYPO3 v12 LTS        |
-|           v3.x | n/a                                                                    | *planned*                | TYPO3 v13            |
+| Major version: | Git branch:                                                              | Status:                  | TYPO3 compatibility: |
+|---------------:|:------------------------------------------------------------------------:|:-------------------------|:---------------------|
+|           v1.x | [typo3v11](https://github.com/typo3-on-aws/aws-cloudfront/tree/typo3v11) | legacy, still maintained | TYPO3 v11 LTS        |
+|           v2.x | [main](https://github.com/typo3-on-aws/aws-cloudfront/tree/main)         | **stable**               | TYPO3 v12 LTS        |
+|           v3.x | n/a                                                                      | *planned*                | TYPO3 v13            |
 
 ## Contribution
 
