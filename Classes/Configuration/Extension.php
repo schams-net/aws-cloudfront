@@ -7,7 +7,7 @@ namespace T3rrific\AwsCloudfront\Configuration;
  * @author Michael Schams | https://schams.net | https://t3rrific.com
  * Based on EXT:typo3_warming by Elias Häußler <elias@haeussler.dev> | https://github.com/eliashaeussler/typo3-warming
  *
- * See README.md and/or LICENSE.md for copyright and license information.
+ * See README.md and/or LICENSE.txt for copyright and license information.
  */
 
 use T3rrific\AwsCloudfront\Hook\BackendHook;
